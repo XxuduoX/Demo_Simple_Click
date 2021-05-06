@@ -39,13 +39,7 @@ public class MainActivity extends AppCompatActivity {
                 String stringResponse = etInput.getText().toString();
                 tvDisplay.setText(stringResponse);
 
-                if (tgBtnDisplay.isChecked()==true){
-                    etInput.setEnabled(true);
-                }
-                else{
-                    etInput.setEnabled(false);
 
-                }
                 int checkedRadioId = rgGender.getCheckedRadioButtonId();
                 if(checkedRadioId == R.id.radioButtonGenderMale){
                     tvDisplay.setText("He says "+stringResponse);
@@ -54,6 +48,19 @@ public class MainActivity extends AppCompatActivity {
                     tvDisplay.setText("She says "+stringResponse);
                 }
             }
+        });
+
+        tgBtnDisplay.setOnClickListener (new View.OnClickListener() {
+            @Override
+            public void onClick(View view){
+            // Code for the action;
+
+            if (tgBtnDisplay.isChecked() == true) {
+                etInput.setEnabled(true);
+            } else {
+                etInput.setEnabled(false);
+            }
+           }
         });
     }
 }
